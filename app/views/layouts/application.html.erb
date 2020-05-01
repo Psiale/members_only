@@ -10,9 +10,14 @@
   </head>
 
   <body>
+
+    <nav class="navbar">
+    <div class="navbar-brand"> Title</div>
+    <div class="navbar-end button is-primary"> <%= link_to "Logout", destroy_user_session_path, method: :delete %>  </div>
+    </nav>
+
         <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <%= yield %>
   </body>
 </html>
