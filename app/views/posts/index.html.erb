@@ -10,8 +10,7 @@
     <h2 class=" is-size-3"><%= post.title %></h2>
     <p class="is-size-4"><%= post.content %></p>
     <% if user_signed_in? %>
-    <strong><%= post.user_id %></strong>
-    <strong><%= post.user.name %></strong>
+    <strong>Author: <%= post.user.name %></strong>
     <% end %>
     </div>
     <p class="has-text-centered">
