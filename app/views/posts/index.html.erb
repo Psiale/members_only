@@ -1,5 +1,7 @@
 <!--<p id="notice"><%= notice %></p>-->
 
+
+
 <h1 class="is-size-2 has-text-centered">Posts</h1>
 
 <div class="columns is-multiline is-centered">
@@ -11,16 +13,21 @@
     <p class="is-size-4"><%= post.content %></p>
     <% if user_signed_in? %>
     <strong>Author: <%= post.user.name %></strong>
+    <% if current_user.member %>
+    <div class="box has-background-warning">
+      <strong class=" has-text-danger "> SECRET USER ID CODE: <%= post.user.id %></strong>
+      </div>
+    <% end %>
     <% end %>
     </div>
-    <p class="has-text-centered">
-
+        <p class="has-text-centered">
     <%= link_to 'Show', post, class: "button is-primary" %> 
+    <% if current_user.id == post.user_id  %>
     <%= link_to 'Edit', edit_post_path(post), class: "button is-primary" %>
     <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-primary" %>
     
-    </p>
-
+  <% end %>
+      </p>
     </div>
   </div>
   <% end %>
