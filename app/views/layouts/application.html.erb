@@ -12,14 +12,14 @@
   <body>
 
     <nav class="navbar">
-    <div class="navbar-brand"> Title</div>
+    <div class="navbar-brand"><h1 class="is-size-1">Members Only</h1></div>
     <div class="navbar-end">
       <% if user_signed_in? %>
         <div class="navbar-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-primary" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-info" %>
         </div>
         <div class="navbar-item">
-          <%= link_to "User settings", edit_user_registration_path, class: "button is-warning" %>
+          <%= link_to "User settings", edit_user_registration_path, class: "button is-danger" %>
         </div>
       <% else %>
       <div class="navbar-item">
@@ -32,8 +32,12 @@
     </div>
     </nav>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <% flash.each do |type, msg| %>
+    <div class="box has-background-success">
+      <%= msg %>
+    </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
