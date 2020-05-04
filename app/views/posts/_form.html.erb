@@ -35,9 +35,11 @@
         </div>
       </div>
       
+      <% if current_user.id == @post.user_id%>
       <div class="actions">
         <%= form.submit "Submit", class: "button is-primary" %>
       </div>
+      <% end %>
     <% end %>
 
     </div>

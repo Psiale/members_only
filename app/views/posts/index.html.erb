@@ -22,11 +22,12 @@
     </div>
         <p class="has-text-centered">
     <%= link_to 'Show', post, class: "button is-primary" %> 
+    <% if post && current_user %>
     <% if current_user.id == post.user_id  %>
     <%= link_to 'Edit', edit_post_path(post), class: "button is-primary" %>
-    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-primary" %>
-    
-  <% end %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-primary" %>    
+    <% end %>
+    <% end %>
       </p>
     </div>
   </div>
