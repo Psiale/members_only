@@ -21,6 +21,11 @@
     </div>
   </div>
 
+  <div class="field">
+    <%= f.label :full_name, class: "is-size-4"  %>
+    <%= f.text_field :name, autocomplete: "Your full name", class: "input is-size-4" %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -48,6 +53,11 @@
   <div class="field">
     <%= f.label :current_password, class: "is-size-4" %> <p class="is-size-5"><i>(we need your current password to confirm your changes)</i></p><br />
     <%= f.password_field :current_password, autocomplete: "current-password" , class: "input is-size-4" %>
+  </div>
+
+    <div>
+  <%= f.label "Are you a member? Tell me the truth 🧐!", class: "is-size-4"  %>
+  <%= f.check_box :member, class: "is-size-4" %>
   </div>
 
   <div class="actions">

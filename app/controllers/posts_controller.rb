@@ -17,8 +17,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.user_id = current_user.id
-
-
   end
 
   # GET /posts/1/edit

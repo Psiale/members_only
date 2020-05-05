@@ -1,6 +1,6 @@
 # Ruby on Rails: Blogger tutorial solution
 
- Solution to the * Members only* excercises from The Odin Project's  [Authentication](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication)
+ Solution to the *Members only* excercises from The Odin Project's [Authentication Section](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication).
 
 
 ### Prerequisites
