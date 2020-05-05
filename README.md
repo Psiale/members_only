@@ -1,4 +1,4 @@
-# Ruby on Rails: Blogger tutorial solution
+# Ruby on Rails: Members Only
 
  Solution to the *Members only* excercises from The Odin Project's [Authentication Section](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication). We added an extra feature to show User IDs only if the signed-in user selected the "Are you a member?" option during sign-up.
 
