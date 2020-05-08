@@ -1,0 +1,39 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+
+
+<h1 class="is-size-2 has-text-centered">Posts</h1>
+
+<div class="columns is-multiline is-centered">
+  <% @posts.each do |post| %>
+  <div class="column  is-one-quarter">
+  <div class="box has-background-grey-lighter has-text-centered">
+  <div class="box has-background-warning">
+    <h2 class=" is-size-3"><%= post.title %></h2>
+    <p class="is-size-4"><%= post.content %></p>
+    <% if user_signed_in? %>
+    <strong>Author: <%= post.user.name %></strong>
+    <% if current_user.member %>
+    <div class="box has-background-warning">
+      <strong class=" has-text-danger "> SECRET USER ID CODE: <%= post.user.id %></strong>
+      </div>
+    <% end %>
+    <% end %>
+    </div>
+        <p class="has-text-centered">
+    <%= link_to 'Show', post, class: "button is-primary" %> 
+    <% if post && current_user %>
+    <% if current_user.id == post.user_id  %>
+    <%= link_to 'Edit', edit_post_path(post), class: "button is-primary" %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-primary" %>    
+    <% end %>
+    <% end %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<br>
+
+<p class="has-text-centered"><%= link_to 'New Post', new_post_path, class: "button is-success" %></p>

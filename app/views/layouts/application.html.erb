@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Members Only</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav class="navbar">
+    <div class="navbar-brand"><h1 class="is-size-1">Members Only 🕵️‍♀️🕵️‍♂️</h1></div>
+    <div class="navbar-end">
+      <% if user_signed_in? %>
+        <div class="navbar-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-info" %>
+        </div>
+        <div class="navbar-item">
+          <%= link_to "User settings", edit_user_registration_path, class: "button is-danger" %>
+        </div>
+      <% else %>
+      <div class="navbar-item">
+        <%= link_to "Log in", new_user_session_path, class: "button is-info" %>
+      </div>
+      <div class="navbar-item">
+        <%= link_to "Register", new_user_registration_path, class: "button is-danger" %>
+      </div>
+      <% end %>
+    </div>
+    </nav>
+
+    <% flash.each do |type, msg| %>
+    <div class="box has-background-success">
+      <%= msg %>
+    </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
