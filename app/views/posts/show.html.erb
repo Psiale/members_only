@@ -1,0 +1,25 @@
+<div class="columns is-multiline is-centered">
+
+  <div class="column  is-two-thirds">
+  <div class="box has-background-grey-lighter has-text-centered">
+  <div class="box has-background-warning">
+    <h2 class="is-size-3"><%= @post.title %></h2>
+    <p class="is-size-4"><%= @post.content %></p>
+    <% if user_signed_in? %>
+    <strong>Author: <%= @post.user.name %></strong>
+    <% end %>
+    </div>
+    <p class="has-text-centered">
+    <% if current_user %>
+    <% if current_user.id == @post.user_id %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "button is-primary" %> 
+    <% end %>
+    <% end %>
+    <%= link_to 'Back', posts_path, class: "button is-primary"  %>
+
+    </p>
+
+    </div>
+  </div>
+  
+</div>
