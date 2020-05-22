@@ -28,7 +28,7 @@ Check out the Heroku live demo [here](https://sheltered-forest-68415.herokuapp.c
 **Alexis Sanchez**
 - Github: [@Psiale](https://github.com/Psiale)
 - Twitter: [@TFH_](https://twitter.com/TFH_)
-- Linkedin: [Alexis Sanchez](https://www.linkedin.com/in/alexis-gabriel-sánchez-cárcamo-264ba7194/)
+- Linkedin: [Alexis Sanchez](https://www.linkedin.com/in/alexis-sanchez-dev/)
 
 ## 🤝 Contributing
 
